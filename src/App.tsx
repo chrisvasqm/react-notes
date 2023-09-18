@@ -7,7 +7,7 @@ function App() {
     <>
       <h1>Todos App</h1>
       <Button colorScheme='blue'>Click me!</Button>
-      <NoteCard></NoteCard>
+      <NoteCard title='Title' body='Body' />
     </>
   );
 }
