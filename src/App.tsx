@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, HStack, Stack } from '@chakra-ui/react';
+import { Button, Container, HStack, Stack } from '@chakra-ui/react';
 import NoteCard from './components/NoteCard';
 import notesData from './resources/notes.json';
 import SearchBar from './components/SearchBar';
@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-    <>
+    <Container size={['md', 'sm']}>
       <Stack spacing={2} margin={2}>
         <HStack>
           <SearchBar onChange={text => handleSearch(text)} />
@@ -33,7 +33,7 @@ function App() {
         {notes &&
           notes.map(note => <NoteCard key={note.title} title={note.title} body={note.body} />)}
       </Stack>
-    </>
+    </Container>
   );
 }
 
