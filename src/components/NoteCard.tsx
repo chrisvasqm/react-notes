@@ -7,7 +7,7 @@ interface Props {
 
 function NoteCard({ title, body }: Props) {
   return (
-    <Card padding={2} margin={2}>
+    <Card padding={2}>
       <CardHeader>
         <Heading fontSize='2xl'>{title}</Heading>
       </CardHeader>
