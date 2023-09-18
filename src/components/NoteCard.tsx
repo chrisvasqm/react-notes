@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, Heading } from '@chakra-ui/react';
 interface Props {
   title: string;
   body: string;
@@ -6,7 +6,9 @@ interface Props {
 function NoteCard({ title, body }: Props) {
   return (
     <Card padding={2} margin={2}>
-      <CardHeader>{title}</CardHeader>
+      <CardHeader>
+        <Heading fontSize='2xl'>{title}</Heading>
+      </CardHeader>
       <CardBody>{body}</CardBody>
     </Card>
   );
