@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import { Stack } from '@chakra-ui/react';
 import NoteCard from './components/NoteCard';
 import notesData from './resources/notes.json';
 import SearchBar from './components/SearchBar';
-import { useState } from 'react';
 
 function App() {
   const [notes, setNotes] = useState(notesData);
