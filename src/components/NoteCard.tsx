@@ -1,8 +1,10 @@
 import { Card, CardBody, CardHeader, Heading } from '@chakra-ui/react';
+
 interface Props {
   title: string;
   body: string;
 }
+
 function NoteCard({ title, body }: Props) {
   return (
     <Card padding={2} margin={2}>
