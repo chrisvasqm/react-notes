@@ -5,20 +5,17 @@ import SearchBar from './components/SearchBar';
 import { useState } from 'react';
 
 function App() {
-  const notes = notesData;
-  const [searchText, setSearchText] = useState('');
-
-  if (notes.length == 0) return <p>No notes to show.</p>;
+  const [notes, setNotes] = useState(notesData);
 
   function handleSearch(text: string) {
-    console.log(text);
+    setNotes(notes.filter(note => note.title.includes(text)));
   }
 
   return (
     <>
       <Stack spacing={2} margin={2}>
         <SearchBar onChange={text => handleSearch(text)} />
-        
+
         {notes &&
           notes.map(note => <NoteCard key={note.title} title={note.title} body={note.body} />)}
       </Stack>
