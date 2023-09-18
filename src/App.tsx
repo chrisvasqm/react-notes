@@ -11,12 +11,23 @@ function App() {
     setNotes(notes.filter(note => note.title.includes(text)));
   }
 
+  function handleNew() {
+    const newNote = {
+      title: 'New title',
+      body: 'New body'
+    };
+
+    setNotes(notes => [...notes, newNote]);
+  }
+
   return (
     <>
       <Stack spacing={2} margin={2}>
         <HStack>
           <SearchBar onChange={text => handleSearch(text)} />
-          <Button colorScheme='blue'>New</Button>
+          <Button colorScheme='blue' onClick={handleNew}>
+            New
+          </Button>
         </HStack>
 
         {notes &&
