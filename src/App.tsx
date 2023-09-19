@@ -19,16 +19,18 @@ import NoteForm from './pages/NoteForm';
 
 function App() {
   const [notes, setNotes] = useState(notesData);
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function handleSearch(text: string) {
     setNotes(notes.filter(note => note.title.includes(text)));
   }
 
-  function handleNew() {
+  function handleSave() {
     const newNote = {
-      title: 'New title',
-      body: 'New body'
+      title: title,
+      body: body
     };
 
     setNotes(notes => [...notes, newNote]);
@@ -53,7 +55,10 @@ function App() {
         <ModalContent>
           <ModalHeader>New note</ModalHeader>
           <ModalBody>
-            <NoteForm />
+            <NoteForm
+              onTitleChange={title => setTitle(title)}
+              onBodyChange={body => setBody(body)}
+            />
           </ModalBody>
 
           <ModalFooter>
@@ -63,7 +68,7 @@ function App() {
             <Button
               colorScheme='blue'
               onClick={() => {
-                handleNew();
+                handleSave();
                 onClose();
               }}
             >
