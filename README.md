@@ -15,3 +15,5 @@ Run the app
 ```bash
 npm run dev
 ```
+
+Then follow the instructions on your terminal.
