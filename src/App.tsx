@@ -13,7 +13,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import NoteCard from './components/NoteCard';
-import notesData from './resources/notes.json';
+import notesData from './data/notes.json';
 import SearchBar from './components/SearchBar';
 import NoteForm from './pages/NoteForm';
 
